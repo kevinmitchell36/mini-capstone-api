@@ -27,6 +27,7 @@ class V1::ProductsController < ApplicationController
     product.image = params[:image] || product.image
     product.description = params[:description] || product.description
     product.save
+    render json: product.as_json
   end
 
   def destroy
